@@ -16,25 +16,25 @@ function NavBar(props) {
         <List component="nav">
           <ListItem component="div">
             <ListItemText inset>
-              <Typography color="inherit" variant="title">
+              <Typography color="inherit" variant="h1">
                 <Link to="/">Home</Link>
               </Typography>
             </ListItemText>
 
             <ListItemText inset>
-              <Typography color="inherit" variant="title">
+              <Typography color="inherit" variant="h1">
                 <Link to="/admin-dashboard">Admin Panel</Link>
               </Typography>
             </ListItemText>
 
             <ListItemText inset>
-              <Typography color="inherit" variant="title">
+              <Typography color="inherit" variant="h1">
                 <Link to="/about"> About</Link>
               </Typography>
             </ListItemText>
 
             <ListItemText inset>
-              <Typography color="inherit" variant="title">
+              <Typography color="inherit" variant="h1">
                 <Link to="/details"> Course Details(static)</Link>
               </Typography>
             </ListItemText>
