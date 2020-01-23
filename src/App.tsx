@@ -18,10 +18,6 @@ function App() {
         <Route exact path="/" component={Home} />
         <Route path="/about" component={About} />
         <Route path="/admin-dashboard" component={AdminDashboardLayout} />
-        <Route
-          path="/details"
-          render={props => <CourseDetails {...props} course={courses[0]} />}
-        />
       </HashRouter>
     </>
   );

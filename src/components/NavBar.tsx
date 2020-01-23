@@ -32,12 +32,6 @@ const NavBar: React.FC = () => {
                 <Link to="/about"> About</Link>
               </Typography>
             </ListItemText>
-
-            <ListItemText inset>
-              <Typography color="inherit" variant="h3">
-                <Link to="/details"> Course Details(static)</Link>
-              </Typography>
-            </ListItemText>
           </ListItem>
         </List>
       </Toolbar>
