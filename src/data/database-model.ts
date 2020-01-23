@@ -1,6 +1,7 @@
 // Ids should come automatically from Firebase.
 
 export interface Topic {
+  id: string;
   name: string;
   subtopics: Subtopic[];
   codingTasks?: CodingTask[]; // Possible questions can contain material up to the end of the current topic.
