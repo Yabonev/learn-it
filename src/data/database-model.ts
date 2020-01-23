@@ -1,19 +1,19 @@
 // Ids should come automatically from Firebase.
 
-interface Topic {
+export interface Topic {
   name: string;
   subtopics: Subtopic[];
   codingTasks?: CodingTask[]; // Possible questions can contain material up to the end of the current topic.
 }
 
-interface Subtopic {
+export interface Subtopic {
   name: string;
   content: string; // Convert to a structured entity?
   importance: Number; // -- Maybe change to an enumerator
   subtopicLevelTasks?: CodingTask[]; // Spans over previous material and current subtopic.
 }
 
-interface CodingTask {
+export interface CodingTask {
   taskDescription: string;
   difficulty: Number; // -- Maybe change to an enumerator
   solution?: string;
@@ -28,4 +28,3 @@ interface DatabaseTypescriptModel {
 
 // Importance - How important is the material in relation to the whole course.
 // Difficulty - How difficult/hard is the task at hand compared to the hardest tasks in the whole course.
-export {};
