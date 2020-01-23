@@ -9,7 +9,7 @@ import {
 } from "@material-ui/core";
 import { Link } from "react-router-dom";
 
-const NavBar: React.FC = _ => {
+const NavBar: React.FC = () => {
   return (
     <AppBar color="primary" position="static">
       <Toolbar>

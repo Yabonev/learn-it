@@ -1,10 +1,9 @@
-import React, { useState, useEffect } from "react";
-import { Topic } from "../data/database-model";
+import React from "react";
 import TopicsList from "./TopicsList";
 import { useTopics } from "../hooks/topics";
 
-const AdminDashboardLayout: React.FC = _ => {
-  const { topics, error, loading } = useTopics();
+const AdminDashboardLayout: React.FC = () => {
+  const { topics } = useTopics();
 
   return <TopicsList topics={topics} />;
 };
