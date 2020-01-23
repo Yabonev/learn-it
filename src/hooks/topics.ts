@@ -1,9 +1,8 @@
-import * as Firebase from "firebase";
+import firestore from "../firestore";
 import { useState, useEffect } from "react";
 import { Topic } from "../data/database-model";
 
 export const useTopics = () => {
-  const firestore = Firebase.firestore();
   const [topics, setTopics] = useState<Topic[]>([]);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
