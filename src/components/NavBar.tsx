@@ -9,32 +9,32 @@ import {
 } from "@material-ui/core";
 import { Link } from "react-router-dom";
 
-function NavBar(props) {
+const NavBar: React.FC = _ => {
   return (
     <AppBar color="primary" position="static">
       <Toolbar>
         <List component="nav">
           <ListItem component="div">
             <ListItemText inset>
-              <Typography color="inherit" variant="h1">
+              <Typography color="inherit" variant="h3">
                 <Link to="/">Home</Link>
               </Typography>
             </ListItemText>
 
             <ListItemText inset>
-              <Typography color="inherit" variant="h1">
+              <Typography color="inherit" variant="h3">
                 <Link to="/admin-dashboard">Admin Panel</Link>
               </Typography>
             </ListItemText>
 
             <ListItemText inset>
-              <Typography color="inherit" variant="h1">
+              <Typography color="inherit" variant="h3">
                 <Link to="/about"> About</Link>
               </Typography>
             </ListItemText>
 
             <ListItemText inset>
-              <Typography color="inherit" variant="h1">
+              <Typography color="inherit" variant="h3">
                 <Link to="/details"> Course Details(static)</Link>
               </Typography>
             </ListItemText>
@@ -43,6 +43,6 @@ function NavBar(props) {
       </Toolbar>
     </AppBar>
   );
-}
+};
 
 export default NavBar;
