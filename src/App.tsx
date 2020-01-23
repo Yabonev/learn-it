@@ -6,8 +6,6 @@ import NavBar from "./components/NavBar";
 import Home from "./components/Home";
 import AdminDashboardLayout from "./components/AdminDashboardLayout";
 import About from "./components/About";
-import CourseDetails from "./components/CourseDetails";
-import courses from "./data/courses";
 
 function App() {
   return (
