@@ -7,7 +7,16 @@ interface TopicsListProps {
 
 const TopicsList: React.FC<TopicsListProps> = ({ topics }: TopicsListProps) => {
   console.log("topics: ", topics);
-  return <h1> TOPICS</h1>;
+  return (
+    <>
+      <h1> TOPICS</h1>
+      <ul>
+        {topics.map(topic => (
+          <li key={topic.id}>{topic.name}</li>
+        ))}
+      </ul>
+    </>
+  );
 };
 
 export default TopicsList;
