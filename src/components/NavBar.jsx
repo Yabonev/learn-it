@@ -38,12 +38,6 @@ function NavBar(props) {
                 <Link to="/details"> Course Details(static)</Link>
               </Typography>
             </ListItemText>
-
-            <ListItemText inset>
-              <Typography color="inherit" variant="title">
-                <Link to="/firebase"> FIREBASE</Link>
-              </Typography>
-            </ListItemText>
           </ListItem>
         </List>
       </Toolbar>
