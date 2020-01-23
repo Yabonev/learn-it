@@ -4,7 +4,7 @@ import { HashRouter, Route } from "react-router-dom";
 import NavBar from "./components/NavBar";
 
 import Home from "./components/Home";
-import AdminDashboard from "./components/AdminDashboard";
+import AdminDashboardLayout from "./components/AdminDashboardLayout";
 import About from "./components/About";
 import CourseDetails from "./components/CourseDetails";
 import courses from "./data/courses";
@@ -20,7 +20,7 @@ function App() {
         <Route path="/about" component={About} />
         <Route
           path="/admin-dashboard"
-          render={props => <AdminDashboard {...props} courses={courses} />}
+          render={props => <AdminDashboardLayout {...props} courses={courses} />}
         />
         <Route
           path="/details"
