@@ -1,6 +1,7 @@
 import React from "react";
 import Loader from "react-loader-spinner";
 import TopicsList from "./TopicsList";
+import CreateTopic from "./CreateTopic";
 import { useTopics } from "../hooks/topics";
 
 const AdminDashboardLayout: React.FC = () => {
@@ -8,9 +9,14 @@ const AdminDashboardLayout: React.FC = () => {
 
   const loader = loading && <Loader />;
   const errorMessage = error && <p>Error occurred : {error}</p>;
-  const topicsList = <TopicsList topics={topics} />;
 
-  return <>{loader || errorMessage || topicsList}</>;
+  return (
+    <>
+      {loader || errorMessage || <TopicsList topics={topics} />}
+      <br />
+      <CreateTopic />
+    </>
+  );
 };
 
 export default AdminDashboardLayout;
