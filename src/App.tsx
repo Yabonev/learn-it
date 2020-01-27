@@ -6,6 +6,7 @@ import NavBar from "./components/NavBar";
 import Home from "./components/Home";
 import AdminDashboardLayout from "./components/AdminDashboardLayout";
 import About from "./components/About";
+import CreateTopic from "./components/CreateTopic";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route exact path="/" component={Home} />
         <Route path="/about" component={About} />
         <Route path="/admin-dashboard" component={AdminDashboardLayout} />
+        <Route path="/create-new-topic" component={CreateTopic} />
       </HashRouter>
     </>
   );
