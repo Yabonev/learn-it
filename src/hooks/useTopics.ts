@@ -1,4 +1,4 @@
-import firestore from "../firestore";
+import { firestore } from "../firestore";
 import { useState, useEffect } from "react";
 import { Topic } from "../data/database-model";
 
