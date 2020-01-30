@@ -7,6 +7,9 @@ import Home from "./components/Home";
 import AdminDashboardLayout from "./components/AdminDashboardLayout";
 import About from "./components/About";
 import CreateTopic from "./components/CreateTopic";
+import CreateSubtopicForm from "./components/CreateSubtopicForm";
+
+import "./App.css";
 
 function App() {
   return (
@@ -18,6 +21,7 @@ function App() {
         <Route path="/about" component={About} />
         <Route path="/admin-dashboard" component={AdminDashboardLayout} />
         <Route path="/create-new-topic" component={CreateTopic} />
+        <Route path="/create-new-subtopic" component={CreateSubtopicForm} />
       </HashRouter>
     </>
   );

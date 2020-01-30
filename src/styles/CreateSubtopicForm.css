@@ -1,0 +1,33 @@
+.container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 2em;
+    margin: 1em;
+    text-align: center;
+    align-items: center;
+}
+
+form {
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    display: block;
+    font-weight: 600;
+    text-align: left;
+    padding: 15px 2px 0;
+}
+
+input {
+    border-radius: 3px;
+    width: auto;
+}
+
+.btn {
+    margin: 15px 0;
+    padding: 5px;
+    font-weight: 600;
+}
