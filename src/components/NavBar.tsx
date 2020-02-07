@@ -42,6 +42,11 @@ const NavBar: React.FC = () => {
                 <Link to="/create-new-subtopic"> Create new Subtopic</Link>
               </Typography>
             </ListItemText>
+            <ListItemText inset>
+              <Typography color="inherit" variant="h3">
+                <Link to="/create-new-coding-task">Create new Coding task</Link>
+              </Typography>
+            </ListItemText>
           </ListItem>
         </List>
       </Toolbar>
