@@ -1,28 +1,33 @@
 import { useState } from "react";
 import { firestore, firestoreArrayUnion } from "../firestore";
-import { ICreateSubtopic } from "../data/models";
+import { Subtopic } from "../data/database-model";
 
 const useCreateSubtopic = () => {
+  const [success, setSuccess] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  const createSubtopic = (subtopicInfo: ICreateSubtopic) => {
+  const createSubtopic = (topicId: string, subtopic: Subtopic) => {
+    setSuccess(false);
     setLoading(true);
 
     firestore
       .collection("topics")
-      .doc(subtopicInfo.topicId)
+      .doc(topicId)
       .update({
-        subtopics: firestoreArrayUnion(subtopicInfo.subtopic)
+        subtopics: firestoreArrayUnion(subtopic)
       })
-      .then(() => setLoading(false))
+      .then(() => {
+        setLoading(false);
+        setSuccess(true);
+      })
       .catch(error => {
         setError(error);
         setLoading(false);
       });
   };
 
-  return { loading, error, createSubtopic };
+  return { success, loading, error, createSubtopic };
 };
 
 export default useCreateSubtopic;
