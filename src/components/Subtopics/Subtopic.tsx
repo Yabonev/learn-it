@@ -33,7 +33,13 @@ const Subtopic = ({ initialSubtopic }: SubtopicProps) => {
         </AccordionItemButton>
       </AccordionItemHeading>
 
-      <AccordionItemPanel></AccordionItemPanel>
+      <AccordionItemPanel>
+        <ul>
+          <li>{subtopic.id}</li>
+          <li>{subtopic.content}</li>
+          <li>{subtopic.importance}</li>
+        </ul>
+      </AccordionItemPanel>
     </AccordionItem>
   );
 };
