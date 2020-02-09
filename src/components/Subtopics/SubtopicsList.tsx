@@ -17,7 +17,11 @@ const SubtopicsList = ({ initialSubtopics }: SubtopicsProps) => {
     <Subtopic key={subtopic.name} initialSubtopic={subtopic} />
   ));
 
-  return <Accordion allowMultipleExpanded>{subtopicsHtml}</Accordion>;
+  return (
+    <Accordion allowMultipleExpanded allowZeroExpanded>
+      {subtopicsHtml}
+    </Accordion>
+  );
 };
 
 export default SubtopicsList;
