@@ -4,7 +4,7 @@ import useCreateSubtopic from "../../hooks/useCreateSubtopic";
 import {
   subtopicNameRequirement,
   importanceRequirement
-} from "../../forms-util/requirements";
+} from "./util/requirements";
 import { useForm } from "react-hook-form";
 import "../../styles/CreateSubtopicForm.css";
 
