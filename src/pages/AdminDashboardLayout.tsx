@@ -1,7 +1,7 @@
 import React from "react";
 import Loader from "react-loader-spinner";
-import TopicsList from "./TopicsList";
-import CreateTopic from "./CreateTopic";
+import TopicsList from "../components/TopicsList";
+import CreateTopic from "../components/forms/CreateTopicForm";
 import { useTopics } from "../hooks/useTopics";
 
 const AdminDashboardLayout: React.FC = () => {

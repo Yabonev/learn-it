@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { useTopics } from "../hooks/useTopics";
-import useCreateSubtopic from "../hooks/useCreateSubtopic";
+import { useTopics } from "../../hooks/useTopics";
+import useCreateSubtopic from "../../hooks/useCreateSubtopic";
 import {
   subtopicNameRequirement,
   importanceRequirement
-} from "../forms-util/requirements";
+} from "../../forms-util/requirements";
 import { useForm } from "react-hook-form";
-import "../styles/CreateSubtopicForm.css";
+import "../../styles/CreateSubtopicForm.css";
 
 const CreateSubtopicForm: React.FC = () => {
   const { topics } = useTopics();
@@ -34,6 +34,7 @@ const CreateSubtopicForm: React.FC = () => {
         {err}
       </p>
     ));
+
   return (
     <div className="container">
       <h2>Create new subtopic</h2>
