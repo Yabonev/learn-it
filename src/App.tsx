@@ -1,22 +1,51 @@
 import React from "react";
 
-import { HashRouter, Route } from "react-router-dom";
-import NavBar from "./components/NavBar";
-
 import Home from "./components/Home";
-import AdminDashboardLayout from "./components/AdminDashboardLayout";
 import About from "./components/About";
-import CreateTopic from "./components/CreateTopic";
-import CreateSubtopicForm from "./components/CreateSubtopicForm";
+import AdminDashboardLayout from "./pages/AdminDashboardLayout";
+import CreateTopic from "./components/forms/CreateTopicForm";
+import CreateSubtopicForm from "./components/forms/CreateSubtopicForm";
+import CreateCodingTaskForm from "./components/forms/CreateCodingTaskForm";
 
-import "./App.css";
-import CreateCodingTaskForm from "./components/CreateCodingTaskForm";
+import { Link, HashRouter, Route } from "react-router-dom";
+
+import { List, ListItemText, Typography, AppBar } from "@material-ui/core";
+import { CSSProperties } from "@material-ui/styles";
+
+const styles = {
+  navbar: {
+    display: "flex"
+  } as CSSProperties
+};
 
 function App() {
+  const navigationLinks = [
+    { to: "/", title: "Home" },
+    { to: "admin-dashboard", title: "Admin Dashboard" },
+    { to: "about", title: "About" },
+    { to: "create-new-topic", title: "Create Topic" },
+    { to: "create-new-subtopic", title: "Create Subtopic" },
+    { to: "create-new-coding-task", title: "Create Coding Task" }
+  ];
+
+  const linksHtml = navigationLinks.map(link => (
+    <ListItemText key={link.title} inset>
+      <Link to={link.to}>
+        <Typography variant="h4" align="center" color="textPrimary">
+          {link.title}
+        </Typography>
+      </Link>
+    </ListItemText>
+  ));
+
   return (
     <>
       <HashRouter>
-        <NavBar />
+        <AppBar position="static">
+          <List component="nav" style={styles.navbar}>
+            {linksHtml}
+          </List>
+        </AppBar>
 
         <Route exact path="/" component={Home} />
         <Route path="/about" component={About} />
