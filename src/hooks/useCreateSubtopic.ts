@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { firestore, firestoreArrayUnion } from "../firestore";
-import { SubtopicModel } from "../models/Subtopic";
+import SubtopicModel from "../models/Subtopic";
 
 const useCreateSubtopic = () => {
   const [success, setSuccess] = useState(false);

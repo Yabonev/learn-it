@@ -1,6 +1,6 @@
-import { firestore } from "../firestore";
 import { useState, useEffect } from "react";
-import { TopicModel } from "../models/Topic";
+import { firestore } from "../firestore";
+import TopicModel from "../models/Topic";
 
 export const useTopics = () => {
   const [topics, setTopics] = useState<TopicModel[]>([]);
