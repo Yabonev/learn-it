@@ -1,0 +1,14 @@
+.topics {
+  width: 50%;
+  background-color: whitesmoke;
+  margin: 2em;
+  padding: 2em;
+}
+
+.topic {
+  background-color: thistle;
+  padding: 1em;
+  text-align: left;
+  font-weight: 500;
+  font-size: larger;
+}
