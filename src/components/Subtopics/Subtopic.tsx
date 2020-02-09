@@ -1,16 +1,40 @@
 import * as React from "react";
-import { ListItem, ListItemText } from "@material-ui/core";
-import { SubtopicModel } from "../../models/Subtopic";
+
+import SubtopicModel from "../../models/Subtopic";
+
+import {
+  AccordionItem,
+  AccordionItemState,
+  AccordionItemButton,
+  AccordionItemHeading,
+  AccordionItemPanel
+} from "react-accessible-accordion";
+
+import ChevronRightIcon from "@material-ui/icons/ChevronRight";
+import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
+import { useState } from "react";
 
 interface SubtopicProps {
-  subtopic: SubtopicModel;
+  initialSubtopic: SubtopicModel;
 }
 
-const Subtopic = ({ subtopic }: SubtopicProps) => {
+const Subtopic = ({ initialSubtopic }: SubtopicProps) => {
+  const [subtopic] = useState<SubtopicModel>(initialSubtopic);
   return (
-    <ListItem key={subtopic.id} divider>
-      <ListItemText>{subtopic.name}</ListItemText>
-    </ListItem>
+    <AccordionItem key={subtopic.id} className="subtopic">
+      <AccordionItemHeading>
+        <AccordionItemButton className="heading">
+          <AccordionItemState>
+            {({ expanded }) =>
+              expanded ? <KeyboardArrowDownIcon /> : <ChevronRightIcon />
+            }
+          </AccordionItemState>
+          {subtopic.name}
+        </AccordionItemButton>
+      </AccordionItemHeading>
+
+      <AccordionItemPanel></AccordionItemPanel>
+    </AccordionItem>
   );
 };
 

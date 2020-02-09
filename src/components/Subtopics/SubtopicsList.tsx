@@ -1,20 +1,23 @@
-import * as React from "react";
+import React from "react";
 
 import Subtopic from "./Subtopic";
 
-import { List } from "@material-ui/core";
-import { SubtopicModel } from "../../models/Subtopic";
+import SubtopicModel from "../../models/Subtopic";
+import { Accordion } from "react-accessible-accordion";
+import { useState } from "react";
 
 interface SubtopicsProps {
-  subtopics: SubtopicModel[];
+  initialSubtopics: SubtopicModel[];
 }
 
-const SubtopicsList = ({ subtopics }: SubtopicsProps) => {
-  const subtopicListItems = subtopics.map(subtopic => (
-    <Subtopic subtopic={subtopic} />
+const SubtopicsList = ({ initialSubtopics }: SubtopicsProps) => {
+  const [subtopics] = useState<SubtopicModel[]>(initialSubtopics);
+
+  const subtopicsHtml = subtopics.map(subtopic => (
+    <Subtopic key={subtopic.name} initialSubtopic={subtopic} />
   ));
 
-  return <List>{subtopicListItems}</List>;
+  return <Accordion allowZeroExpanded>{subtopicsHtml}</Accordion>;
 };
 
 export default SubtopicsList;

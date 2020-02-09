@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import {
   AccordionItem,
@@ -9,23 +9,24 @@ import {
 } from "react-accessible-accordion";
 
 import SubtopicsList from "../Subtopics/SubtopicsList";
+import TopicModel from "../../models/Topic";
 
-import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-
+import ChevronRightIcon from "@material-ui/icons/ChevronRight";
+import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
 import "./styles.css";
-import { TopicModel } from "../../models/Topic";
 interface TopicProps {
-  topic: TopicModel;
+  initialTopic: TopicModel;
 }
 
-const Topic = ({ topic }: TopicProps) => {
+const Topic = ({ initialTopic }: TopicProps) => {
+  const [topic] = useState<TopicModel>(initialTopic);
   return (
     <AccordionItem key={topic.id} className="topic">
       <AccordionItemHeading>
-        <AccordionItemButton>
+        <AccordionItemButton className="heading">
           <AccordionItemState>
-            {isExpanded =>
-              isExpanded ? <ExpandMoreIcon /> : <div>no expando</div>
+            {({ expanded }) =>
+              expanded ? <KeyboardArrowDownIcon /> : <ChevronRightIcon />
             }
           </AccordionItemState>
           {topic.name}
@@ -33,7 +34,7 @@ const Topic = ({ topic }: TopicProps) => {
       </AccordionItemHeading>
 
       <AccordionItemPanel>
-        <SubtopicsList subtopics={topic.subtopics} />
+        <SubtopicsList initialSubtopics={topic.subtopics} />
       </AccordionItemPanel>
     </AccordionItem>
   );

@@ -6,14 +6,16 @@ import TopicsList from "../components/Topics/TopicsList";
 import { useTopics } from "../hooks/useTopics";
 
 const AdminDashboardLayout: React.FC = () => {
-  const { topics, error, loading } = useTopics();
+  const { topics: allTopics, error, loading } = useTopics();
 
-  const loader = loading && <Loader />;
-  const errorMessage = error && <p>Error occurred : {error}</p>;
+  const topicsLoading = loading && <Loader type="TailSpin" />;
+  const topicsFetchFailed = error && <p style={{ color: "red" }}>{error}</p>;
 
   return (
     <div className="container">
-      {loader || errorMessage || <TopicsList topics={topics} />}
+      {topicsFetchFailed || topicsLoading || (
+        <TopicsList initialTopics={allTopics} />
+      )}
     </div>
   );
 };

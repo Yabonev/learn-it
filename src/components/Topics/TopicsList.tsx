@@ -1,24 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { Accordion } from "react-accessible-accordion";
 import Topic from "./Topic";
 
 import "./styles.css";
-import { TopicModel } from "../../models/Topic";
+import TopicModel from "../../models/Topic";
 
 interface TopicsListProps {
-  topics: TopicModel[];
+  initialTopics: TopicModel[];
 }
 
-const TopicsList: React.FC<TopicsListProps> = ({ topics }: TopicsListProps) => {
-  const topicsHtml = topics.map(topic => <Topic topic={topic} />);
+const TopicsList: React.FC<TopicsListProps> = ({
+  initialTopics
+}: TopicsListProps) => {
+  const [topics] = useState<TopicModel[]>(initialTopics);
+
+  const topicsHtml = topics.map(topic => (
+    <Topic key={topic.id} initialTopic={topic} />
+  ));
 
   return (
-    <Accordion
-      className="topics"
-      allowZeroExpanded
-      onChange={id => console.log(id)}
-    >
+    <Accordion className="topics" allowZeroExpanded>
       {topicsHtml}
     </Accordion>
   );

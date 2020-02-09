@@ -6,9 +6,15 @@
 }
 
 .topic {
+  flex-direction: column;
   background-color: thistle;
   padding: 1em;
   text-align: left;
   font-weight: 500;
   font-size: larger;
+}
+
+.heading {
+  display: flex;
+  align-items: center;
 }
