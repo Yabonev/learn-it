@@ -1,13 +1,13 @@
 import { useState } from "react";
 import { firestore, firestoreArrayUnion } from "../firestore";
-import { Subtopic } from "../data/database-model";
+import { SubtopicModel } from "../models/Subtopic";
 
 const useCreateSubtopic = () => {
   const [success, setSuccess] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  const createSubtopic = (topicId: string, subtopic: Subtopic) => {
+  const createSubtopic = (topicId: string, subtopic: SubtopicModel) => {
     setSuccess(false);
     setLoading(true);
 

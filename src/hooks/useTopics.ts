@@ -1,9 +1,9 @@
 import { firestore } from "../firestore";
 import { useState, useEffect } from "react";
-import { Topic } from "../data/database-model";
+import { TopicModel } from "../models/Topic";
 
 export const useTopics = () => {
-  const [topics, setTopics] = useState<Topic[]>([]);
+  const [topics, setTopics] = useState<TopicModel[]>([]);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
@@ -19,7 +19,7 @@ export const useTopics = () => {
           ...doc.data()
         }));
 
-        setTopics(newTopics as Topic[]);
+        setTopics(newTopics as TopicModel[]);
         setLoading(false);
       })
       .catch(error => {
