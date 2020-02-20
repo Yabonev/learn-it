@@ -6,6 +6,7 @@ import AdminDashboard from "./pages/AdminDashboard";
 import CreateTopic from "./components/forms/CreateTopicForm";
 import CreateSubtopicForm from "./components/forms/CreateSubtopicForm";
 import CreateCodingTaskForm from "./components/forms/CreateCodingTaskForm";
+import MasterForm from "./components/forms/MasterForm";
 
 import { Link, HashRouter, Route } from "react-router-dom";
 
@@ -25,7 +26,8 @@ function App() {
     { to: "about", title: "About" },
     { to: "create-new-topic", title: "Create Topic" },
     { to: "create-new-subtopic", title: "Create Subtopic" },
-    { to: "create-new-coding-task", title: "Create Coding Task" }
+    { to: "create-new-coding-task", title: "Create Coding Task" },
+    { to: "master-form", title: "Master form" }
   ];
 
   const linksHtml = navigationLinks.map(link => (
@@ -56,6 +58,7 @@ function App() {
           path="/create-new-coding-task"
           component={CreateCodingTaskForm}
         />
+        <Route path="/master-form" component={MasterForm} />
       </HashRouter>
     </>
   );
