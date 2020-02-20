@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { firestore, QuerySnapshot } from "../firestore";
+import { firestore, QuerySnapshot } from "../firestore/firestore";
 import TopicModel from "../models/Topic";
 
 export const useTopics = () => {
