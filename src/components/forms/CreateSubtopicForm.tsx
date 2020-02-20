@@ -5,13 +5,19 @@ import {
   subtopicNameRequirement,
   importanceRequirement
 } from "./util/requirements";
-import { useForm } from "react-hook-form";
+import { useForm, FieldError } from "react-hook-form";
 import "../../styles/CreateSubtopicForm.css";
+import SubtopicModel from "../../models/Subtopic";
+
+interface FormData {
+  topicId: string;
+  subtopic: SubtopicModel;
+}
 
 const CreateSubtopicForm: React.FC = () => {
   const { topics } = useTopics();
   const { success, createSubtopic } = useCreateSubtopic();
-  const { handleSubmit, register, errors } = useForm();
+  const { handleSubmit, register, errors } = useForm<FormData>();
   const [renderCreateSuccess, setRenderCreateSuccess] = useState(false);
 
   useEffect(() => {
@@ -19,13 +25,15 @@ const CreateSubtopicForm: React.FC = () => {
     setTimeout(() => setRenderCreateSuccess(false), 2500);
   }, [success]);
 
-  const onSubmit = (formData: Record<"topicId" | "subtopic", any>) => {
+  const onSubmit = (formData: FormData) => {
     createSubtopic(formData.topicId, formData.subtopic);
   };
 
   const subtopicErrors = errors.subtopic || {};
 
-  const inputErrors = Object.values(subtopicErrors).map(err => err.message);
+  const inputErrors = Object.values(subtopicErrors).map(
+    err => (err as FieldError).message
+  );
 
   const errorMessages =
     inputErrors &&

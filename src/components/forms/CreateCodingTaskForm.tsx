@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
 import { CSSProperties } from "@material-ui/styles";
-import { useFormControl } from "@material-ui/core";
 import { useForm } from "react-hook-form";
 
 const styles = {
@@ -28,18 +27,15 @@ export interface CodingTask {
 }
 
 const CreateCodingTaskForm = () => {
-  const emptyTask = {
-    taskDescription: "",
-    difficulty: 0,
-    solution: ""
-  };
-  const [task, setTask] = useState<CodingTask>();
-  const { handleSubmit, register, errors } = useForm();
+  const { handleSubmit, register } = useForm<CodingTask>();
 
+  const onSubmit = (formData: CodingTask) => {
+    console.log(formData.difficulty);
+  };
   return (
     <div style={styles.container}>
       <h2>Create coding task</h2>
-      <form style={styles.form}>
+      <form style={styles.form} onSubmit={handleSubmit(onSubmit)}>
         <label>Problem description</label>
         <textarea name="taskDescription" ref={register} />
 
@@ -54,6 +50,8 @@ const CreateCodingTaskForm = () => {
 
         <label>Tag</label>
         <input name="tag" type="text" ref={register} />
+
+        <button type="submit">Submit</button>
       </form>
     </div>
   );
