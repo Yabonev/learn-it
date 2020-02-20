@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { firestore } from "../firestore";
+import { firestore, QuerySnapshot } from "../firestore";
 import TopicModel from "../models/Topic";
 
 export const useTopics = () => {
@@ -7,9 +7,7 @@ export const useTopics = () => {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
-  const onNext = (
-    snapshot: firebase.firestore.QuerySnapshot<firebase.firestore.DocumentData>
-  ) => {
+  const onNext = (snapshot: QuerySnapshot) => {
     const newTopics = snapshot.docs.map(doc => ({
       id: doc.id,
       ...doc.data()

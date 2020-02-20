@@ -4,8 +4,18 @@ import firebaseConfig from "./firebaseConfig";
 
 firebase.initializeApp(firebaseConfig);
 
+type DocumentData = firebase.firestore.DocumentData;
+type QuerySnapshotType = firebase.firestore.QuerySnapshot<DocumentData>;
+
 const firestore = firebase.firestore();
+
 const firestoreArrayUnion = firebase.firestore.FieldValue.arrayUnion;
 const firestoreArrayRemove = firebase.firestore.FieldValue.arrayRemove;
 
-export { firestore, firestoreArrayUnion, firestoreArrayRemove };
+const arrayFunctions = {
+  union: firestoreArrayUnion,
+  remove: firestoreArrayRemove
+};
+
+export type QuerySnapshot = QuerySnapshotType;
+export { firestore, arrayFunctions };

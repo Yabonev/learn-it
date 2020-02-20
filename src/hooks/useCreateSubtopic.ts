@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { firestore, firestoreArrayUnion } from "../firestore";
+import { firestore, arrayFunctions } from "../firestore";
 import SubtopicModel from "../models/Subtopic";
 
 const useCreateSubtopic = () => {
@@ -15,7 +15,7 @@ const useCreateSubtopic = () => {
       .collection("topics")
       .doc(topicId)
       .update({
-        subtopics: firestoreArrayUnion(subtopic)
+        subtopics: arrayFunctions.union(subtopic)
       })
       .then(() => {
         setLoading(false);
