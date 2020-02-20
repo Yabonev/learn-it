@@ -6,6 +6,7 @@ interface TopicModel {
   name: string;
   subtopics: SubtopicModel[];
   codingTasks?: CodingTaskModel[]; // Possible questions can contain material up to the end of the current topic.
+  publish: boolean;
 }
 
 export default TopicModel;
