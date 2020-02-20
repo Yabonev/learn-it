@@ -5,7 +5,7 @@ import Loader from "react-loader-spinner";
 import TopicsList from "../components/Topics/TopicsList";
 import { useTopics } from "../hooks/useTopics";
 
-const AdminDashboardLayout: React.FC = () => {
+const AdminDashboard: React.FC = () => {
   const { topics: allTopics, error, loading } = useTopics();
 
   const topicsLoading = loading && <Loader type="TailSpin" />;
@@ -20,4 +20,4 @@ const AdminDashboardLayout: React.FC = () => {
   );
 };
 
-export default AdminDashboardLayout;
+export default AdminDashboard;

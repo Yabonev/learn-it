@@ -2,7 +2,7 @@ import React from "react";
 
 import Home from "./components/Home";
 import About from "./components/About";
-import AdminDashboardLayout from "./pages/AdminDashboardLayout";
+import AdminDashboard from "./pages/AdminDashboard";
 import CreateTopic from "./components/forms/CreateTopicForm";
 import CreateSubtopicForm from "./components/forms/CreateSubtopicForm";
 import CreateCodingTaskForm from "./components/forms/CreateCodingTaskForm";
@@ -49,7 +49,7 @@ function App() {
 
         <Route exact path="/" component={Home} />
         <Route path="/about" component={About} />
-        <Route path="/admin-dashboard" component={AdminDashboardLayout} />
+        <Route path="/admin-dashboard" component={AdminDashboard} />
         <Route path="/create-new-topic" component={CreateTopic} />
         <Route path="/create-new-subtopic" component={CreateSubtopicForm} />
         <Route
