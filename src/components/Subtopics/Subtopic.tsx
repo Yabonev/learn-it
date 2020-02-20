@@ -14,6 +14,12 @@ import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
 import { useState } from "react";
 
+const styles = {
+  indent: {
+    marginLeft: "1em"
+  }
+};
+
 interface SubtopicProps {
   initialSubtopic: SubtopicModel;
 }
@@ -21,7 +27,11 @@ interface SubtopicProps {
 const Subtopic = ({ initialSubtopic }: SubtopicProps) => {
   const [subtopic] = useState<SubtopicModel>(initialSubtopic);
   return (
-    <AccordionItem key={subtopic.id} className="subtopic">
+    <AccordionItem
+      style={styles.indent}
+      key={subtopic.name}
+      className="subtopic"
+    >
       <AccordionItemHeading>
         <AccordionItemButton className="heading">
           <AccordionItemState>
@@ -35,9 +45,9 @@ const Subtopic = ({ initialSubtopic }: SubtopicProps) => {
 
       <AccordionItemPanel>
         <ul>
-          <li>{subtopic.id}</li>
-          <li>{subtopic.content}</li>
-          <li>{subtopic.importance}</li>
+          <li>Name: {subtopic.name}</li>
+          <li>Content: {subtopic.content}</li>
+          <li>Importance: {subtopic.importance}</li>
         </ul>
       </AccordionItemPanel>
     </AccordionItem>

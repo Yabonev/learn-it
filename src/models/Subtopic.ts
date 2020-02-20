@@ -1,7 +1,6 @@
 import CodingTaskModel from "./CodingTask";
 
 interface SubtopicModel {
-  id: string;
   name: string;
   content: string; // Convert to a structured entity?
   importance: Number; // -- Maybe change to an enumerator; How important is the material in relation to the whole course.
