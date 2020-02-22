@@ -12,6 +12,7 @@ import { Link, HashRouter, Route } from "react-router-dom";
 
 import { List, ListItemText, Typography, AppBar } from "@material-ui/core";
 import { CSSProperties } from "@material-ui/styles";
+import WizardForm from "./components/forms/WizardForm";
 
 const styles = {
   navbar: {
@@ -27,7 +28,8 @@ function App() {
     { to: "create-new-topic", title: "Create Topic" },
     { to: "create-new-subtopic", title: "Create Subtopic" },
     { to: "create-new-coding-task", title: "Create Coding Task" },
-    { to: "master-form", title: "Master form" }
+    { to: "master-form", title: "Master form" },
+    { to: "wizard-form", title: "Wizard form" }
   ];
 
   const linksHtml = navigationLinks.map(link => (
@@ -59,6 +61,7 @@ function App() {
           component={CreateCodingTaskForm}
         />
         <Route path="/master-form" component={MasterForm} />
+        <Route path="/wizard-form" component={WizardForm} />
       </HashRouter>
     </>
   );
