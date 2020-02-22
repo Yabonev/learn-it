@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { useTopics } from "../../hooks/useTopics";
-import useCreateSubtopic from "../../hooks/useCreateSubtopic";
+import { useTopics } from "../../hooks/firebase/useTopics";
+import useCreateSubtopic from "../../hooks/firebase/useCreateSubtopic";
 import {
   subtopicNameRequirement,
   importanceRequirement

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import { firestore, QuerySnapshot } from "../firestore/firestore";
-import TopicModel from "../models/Topic";
+import { firestore, QuerySnapshot } from "../../firestore/firestore";
+import TopicModel from "../../models/Topic";
 
 export const useTopics = () => {
   const [topics, setTopics] = useState<TopicModel[]>([]);

@@ -3,7 +3,7 @@ import React from "react";
 import Loader from "react-loader-spinner";
 
 import TopicsList from "../components/Topics/TopicsList";
-import { useTopics } from "../hooks/useTopics";
+import { useTopics } from "../hooks/firebase/useTopics";
 
 const AdminDashboard: React.FC = () => {
   const { topics: allTopics, error, loading } = useTopics();
